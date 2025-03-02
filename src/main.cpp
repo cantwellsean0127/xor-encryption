@@ -58,7 +58,11 @@ int main(int argc, char* argv[])
 	char input_character;
 	while(file.get(input_character))
 	{
-		char key_character = key[key_character_index % key.length()];
+		if(key_character_index == key.length())
+		{
+			key_character_index = 0;
+		}
+		char key_character = key[key_character_index];
 		char output_character = input_character ^ key_character;
 		file.seekp(-1, std::ios::cur);
 		file.write(&output_character, 1);
