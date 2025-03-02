@@ -1,18 +1,31 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-
+#include <unistd.h>
+	
 int main(int argc, char* argv[])
 {
 	
-	std::string file_path;
-	std::string key;
+	std::string file_path = "";
+	std::string key = "";
 	
-	if(argc == 3)
-	{
-		file_path = argv[1];
-	}
-	else
+	int opt;
+    while ((opt = getopt(argc, argv, "f:k:")) != -1) {
+        switch (opt) {
+            case 'f':
+            	file_path = optarg;
+            	break;
+            case 'k':
+            	key = optarg;
+            	break;
+            case '?':
+            case ':':
+            default:
+	           return 1;
+        }
+    }
+	
+	if(file_path == "")
 	{
 		std::cout << "Enter the file's path: ";
 		std::getline(std::cin, file_path);
@@ -26,11 +39,7 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 		
-	if(argc == 3)
-	{
-		key = argv[2];
-	}
-	else
+	if(key == "")
 	{		
 		std::cout << "Enter the key: ";
 		std::getline(std::cin, key);

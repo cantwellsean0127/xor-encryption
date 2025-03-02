@@ -40,21 +40,21 @@ You can run the program in two ways:
 #### 1. Using Command Line Arguments
 
 ```sh
- ./bin/linux.exe <file_path> <key>
+ ./bin/linux.exe -f <file_path> -k <key>
 ```
 or
 ```sh
- ./bin/windows.exe <file_path> <key>
+ ./bin/windows.exe -f <file_path> -k <key>
 ```
 
 Example:
 
 ```sh
- ./bin/linux.exe example.txt secretkey
+ ./bin/linux.exe -f example.txt -k secretkey
 ```
 or
 ```sh
- ./bin/windows.exe example.txt secretkey
+ ./bin/windows.exe -f example.txt -k secretkey
 ```
 
 #### 2. Interactive Mode
@@ -85,7 +85,7 @@ Hello, World!
 If you run:
 
 ```sh
- ./bin/linux.exe example.txt mykey
+ ./bin/linux.exe -f example.txt -k mykey
 ```
 
 The file content will be encrypted. Running the same command again with the same key will decrypt it.
