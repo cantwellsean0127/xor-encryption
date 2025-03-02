@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
 	// If we failed opening the file, we exit and alert the user
 	if(!file)
 	{
-		std::cout << "Error: Unable to open " << file_path << "\n";
+		std::cerr << "Error: Unable to open " << file_path << "\n";
 		return 1;
 	}
 	
