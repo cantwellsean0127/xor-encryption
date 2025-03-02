@@ -6,7 +6,7 @@ int main()
 {
 	std::cout << "Enter the file's path: ";
 	std::string file_path;
-	std::cin >> file_path;
+	std::getline(std::cin, file_path);
 	
 	std::fstream file(file_path, std::ios::in | std::ios::out | std::ios::binary);
 	
@@ -18,7 +18,7 @@ int main()
 	
 	std::cout << "Enter the key: ";
 	std::string key;
-	std::cin >> key;
+	std::getline(std::cin, key);
 	
 	int key_character_index = 0;
 	char input_character;
