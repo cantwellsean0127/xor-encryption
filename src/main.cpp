@@ -8,6 +8,8 @@ int main()
 	std::string file_path;
 	std::cin >> file_path;
 	
+	std::fstream file(file_path, std::ios::in | std::ios::out | std::ios::binary);
+	
 	if(!file)
 	{
 		std::cout << "Error: Unable to open " << file_path << "\n";
@@ -17,8 +19,6 @@ int main()
 	std::cout << "Enter the key: ";
 	std::string key;
 	std::cin >> key;
-	
-	std::fstream file(file_path, std::ios::in | std::ios::out | std::ios::binary);
 	
 	int key_character_index = 0;
 	char input_character;
